@@ -14,4 +14,6 @@ app.use(fileUpload());
 app.use(CourseRouter, TrainerRoute);
 app.use(express.static("public"));
 
-app.listen(5000, "localhost", () => console.log("Server Running in port 5000"));
+app.listen(process.env.port, "localhost", () =>
+  console.log("Server Running in port 5000")
+);

@@ -57,7 +57,9 @@ export const createTrainer = async (req, res) => {
         image: fileName,
         url: url,
       });
-      res.status(201).json({ msg: "Trainer Created Successfuly" });
+      res
+        .status(201)
+        .json({ msg: "Trainer Created Successfuly", data: req.body });
     } catch (error) {
       console.log(error.message);
     }
@@ -126,7 +128,9 @@ export const updateTrainer = async (req, res) => {
         },
       }
     );
-    res.status(200).json({ message: "Trainer Updated Successfully" });
+    res
+      .status(200)
+      .json({ message: "Trainer Updated Successfully", data: req.body });
   } catch (error) {
     console.log(error.message);
   }

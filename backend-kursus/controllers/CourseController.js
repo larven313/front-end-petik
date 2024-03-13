@@ -57,7 +57,9 @@ export const createCourse = async (req, res) => {
         image: fileName,
         url: url,
       });
-      res.status(201).json({ msg: "Course Created Successfuly" });
+      res
+        .status(201)
+        .json({ msg: "Course Created Successfuly", data: req.body });
     } catch (error) {
       console.log(error.message);
     }
@@ -126,7 +128,9 @@ export const updateCourse = async (req, res) => {
         },
       }
     );
-    res.status(200).json({ message: "Course Updated Successfully" });
+    res
+      .status(200)
+      .json({ message: "Course Updated Successfully", data: req.body });
   } catch (error) {
     console.log(error.message);
   }
