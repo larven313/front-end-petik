@@ -1,0 +1,90 @@
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "Bambang",
+    "email" : "bambang@gmail.com",
+    "password" : "12345",
+    "confPassword" : "12345",
+    "role" : "user"
+}
+
+###
+GET http://localhost:5000/users
+
+###
+GET http://localhost:5000/users/f443533b-a281-48c2-bb5a-a7b07672f13a
+
+###
+PUT http://localhost:5000/users/d2a3d3e1-19b4-41eb-a4dd-4c0a44a9354b
+Content-Type: application/json
+
+{
+    "name": "Bambang Updated",
+    "email" : "bambang@gmail.com",
+    "password" : "",
+    "confPassword" : "",
+    "role" : "user"
+}
+
+###
+DELETE http://localhost:5000/users/d2a3d3e1-19b4-41eb-a4dd-4c0a44a9354b
+
+###
+# Login user
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email" : "bambang@gmail.com",
+    "password" : "12345"
+}
+
+###
+# Login admin
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email" : "admin@gmail.com",
+    "password" : "12345"
+}
+
+###
+GET http://localhost:5000/me
+
+###
+# Logout
+DELETE http://localhost:5000/logOut
+
+###
+# Get All Data
+GET http://localhost:5000/products
+
+###
+# Get Single Product
+GET http://localhost:5000/products/a5fc925e-bc84-4fcc-a7a0-bff102ad9a97
+
+###
+# Post data product
+POST http://localhost:5000/products
+Content-Type: application/json
+
+{
+    "name" : "Sanwoo Air Fryer 5.2L LARGE SIZE KOR-5508DI",
+    "price" : 791000
+}
+
+###
+# Update data product
+PUT http://localhost:5000/products/b11398ed-45a2-4cce-b284-1c87539b96cc
+Content-Type: application/json
+
+{
+    "name" : "TCL 40 Inch Google TV - 40G9 - FHD - Google Audio - WiFi - 40G9 updated",
+    "price" : 791999
+}
+
+###
+# Delete data product
+DELETE http://localhost:5000/products/5ddc319f-4315-42f6-850e-6c90b92ccbfd

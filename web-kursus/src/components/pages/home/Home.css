@@ -1,0 +1,14 @@
+.hero-image {
+    transition: .3s all;
+}
+
+.hero-image:hover {
+    rotate: 5deg;
+}
+
+@media (max-width: 768px) {
+    .hero-image {
+      display: none;
+    }
+  }
+  
