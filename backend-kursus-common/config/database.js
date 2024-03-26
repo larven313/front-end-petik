@@ -1,4 +1,5 @@
 const { Sequelize } = require("sequelize");
+require("dotenv").config(); // Memuat variabel lingkungan dari file .env
 
 const db = new Sequelize(
   process.env.DATABASE,

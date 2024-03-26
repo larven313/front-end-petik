@@ -6,6 +6,14 @@ const { DataTypes } = Sequelize;
 const Trainer = db.define(
   "trainer",
   {
+    uuid: {
+      type: DataTypes.STRING,
+      defaultValue: DataTypes.UUIDV4,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
+    },
     name: DataTypes.STRING,
     address: DataTypes.STRING,
     skill: DataTypes.STRING,

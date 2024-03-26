@@ -1,8 +1,19 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../images/petik.png";
+import { useDispatch, useSelector } from "react-redux";
+import { LogOut, reset } from "../features/authSlice";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { user } = useSelector((state) => state.auth);
+
+  const logout = () => {
+    dispatch(LogOut());
+    dispatch(reset());
+    navigate("/");
+  };
   return (
     <div>
       <nav
@@ -33,7 +44,9 @@ const Navbar = () => {
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
-                <button class="button is-light">Log out</button>
+                <button onClick={logout} class="button is-light">
+                  Log out
+                </button>
               </div>
             </div>
           </div>
