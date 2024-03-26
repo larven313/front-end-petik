@@ -1,15 +1,13 @@
-// Membuat object: {}
+// Membuat object: {} & new Object()
 const user = {
   name: "Ucup",
   age: 20,
-  major: "Informatics",
+  major: "Web Development",
 };
 
 // Mengakses nilai
-// console.log(user.name);
-// console.log(user['age']);
+// console.log(user.name); // in PHP : user->name
+// console.log(user["age"]);
 
 // Looping object menggunakan for in
-for (const key in user) {
-  console.log(user[key]);
-}
+for (const key in user) console.log(user[key]);

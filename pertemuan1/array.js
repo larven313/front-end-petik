@@ -1,15 +1,11 @@
-// membuat array: []
-const animals = ["Cat", "Dog", "Fish"];
+// membuat array: [] & array()
+const fruits = ["Apel", "Anggur", "Jeruk"];
 
 // Mengakses nilai
-console.log(animals[1]);
+// console.log(fruits[1]);
 
 // Looping
-for (let i = 0; i < animals.length; i++) {
-  console.log(animals[i]);
-}
+// for (let i = 0; i < fruits.length; i++) console.log(fruits[i]);
 
 // Looping for-of
-for (const animal of animals) {
-  console.log(animal);
-}
+for (const fruit of fruits) console.log(fruit);
