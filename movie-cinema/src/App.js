@@ -4,6 +4,7 @@ import Car from "./component/Car/Car.js";
 import User from "./component/User/User.js";
 import Footer from "./component/Footer/Footer.js";
 import Main from "./component/Main/Main.js";
+import AddMovieForm from "./component/AddMovieForm/AddMovieForm.js";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         beli={() => alert("Sudah dibeli")}
       /> */}
       <Main />
+
       <Footer nama="Sukma Hidayatullah" />
     </div>
   );

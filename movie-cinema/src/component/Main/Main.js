@@ -1,3 +1,5 @@
+import AddMovieForm from "../AddMovieForm/AddMovieForm.js";
+import Counter from "../Counter/Counter.js";
 import Hero from "../Hero/Hero.js";
 import Movies from "../Movies/Movies.js";
 import User from "../User/User.js";
@@ -51,6 +53,7 @@ const Main = () => {
       member: "Silver",
     },
   ];
+
   return (
     <div className="content">
       <Hero />
