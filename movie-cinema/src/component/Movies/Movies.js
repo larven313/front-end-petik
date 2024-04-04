@@ -1,57 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Movie from "../Movie/Movie";
 import "./Movies.css";
 import AddMovieForm from "../AddMovieForm/AddMovieForm";
+import { getMovieList } from "../../api.js";
 
 const Movies = () => {
-  const [nama, setNama] = useState("Ucup");
-
-  console.log(nama);
-
-  const [datas, setDatas] = useState([
-    {
-      title: "Judul film 1",
-      year: 2012,
-      genre: "Comedy",
-      poster: "https://picsum.photos/200/300",
-    },
-    {
-      title: "Judul film 2",
-      year: 2022,
-      genre: "Horror",
-      poster: "https://picsum.photos/200/300",
-    },
-    {
-      title: "Judul film 3",
-      year: 2024,
-      genre: "Romance",
-      poster: "https://picsum.photos/200/300",
-    },
-    {
-      title: "Judul film 4",
-      year: 2009,
-      genre: "Action",
-      poster: "https://picsum.photos/200/300",
-    },
-    {
-      title: "Judul film 5",
-      year: 2017,
-      genre: "Thriller",
-      poster: "https://picsum.photos/200/300",
-    },
-    {
-      title: "Judul film 6",
-      year: 2018,
-      genre: "Fantasy",
-      poster: "https://picsum.photos/200/300",
-    },
-    {
-      title: "Judul film 7",
-      year: 2020,
-      genre: "Action",
-      poster: "https://picsum.photos/200/300",
-    },
-  ]);
+  const [datas, setDatas] = useState([]);
 
   const handleClick = () => {
     const movie = {
@@ -68,7 +22,14 @@ const Movies = () => {
     setDatas([...datas, movie]);
   };
 
-  console.log(datas);
+  useEffect(() => {
+    // menangkap data result api
+    getMovieList().then((result) => {
+      setDatas(result);
+    });
+  }, [getMovieList]);
+
+  // console.log(datas);
 
   return (
     <div>
@@ -77,10 +38,10 @@ const Movies = () => {
         {datas.map((data) => {
           return (
             <Movie
+              id={data.id}
               title={data.title}
-              year={data.year}
-              genre={data.genre}
-              poster={data.poster}
+              year={data.release_date}
+              poster={data.poster_path}
             />
           );
         })}
