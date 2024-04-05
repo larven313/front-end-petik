@@ -44,7 +44,9 @@ function NavbarComponent(args) {
               Top Rated
             </NavLink>
           </Nav>
-          <NavbarText>Ucup</NavbarText>
+          <NavLink to={"/login"}>
+            <button className="button is-light">Login</button>
+          </NavLink>
         </Collapse>
       </Navbar>
     </div>

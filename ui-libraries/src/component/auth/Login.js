@@ -1,5 +1,7 @@
 import React from "react";
 import "bulma/css/bulma.min.css";
+import { NavLink } from "react-router-dom";
+import logo from "../../images/petik.png";
 
 const Login = () => {
   return (
@@ -9,9 +11,16 @@ const Login = () => {
           <div class="columns is-centered">
             <div class="column is-4">
               <form className="box">
-                <h3 className="title has-text-primary">Login</h3>
+                <div class="field has-text-centered">
+                  <NavLink to={"/"}>
+                    <img src={logo} alt="logo-petik" width={94} />
+                  </NavLink>
+                  <h3 className="title has-text-primary ml-auto mr-3">Login</h3>
+                </div>
                 <div class="field">
-                  <label for="email">Email</label>
+                  <label for="email" className="label">
+                    Email
+                  </label>
                   <input
                     type="email"
                     className="input"
@@ -19,17 +28,24 @@ const Login = () => {
                   />
                 </div>
                 <div class="field">
-                  <label for="password">Password</label>
+                  <label for="password" className="label">
+                    Password
+                  </label>
                   <input
                     type="password"
                     className="input"
-                    placeholder="Masukkan password"
+                    placeholder="*********"
                   />
                 </div>
                 <div class="field">
-                  <button className="button is-success is-fullwidth">
+                  <button className="button is-success has-text-white is-fullwidth">
                     Login
                   </button>
+                </div>
+                <div class="field">
+                  <p>
+                    Belum punya akun? <NavLink to={"/register"}>Daftar</NavLink>
+                  </p>
                 </div>
               </form>
             </div>
