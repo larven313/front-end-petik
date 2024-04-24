@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+import axios from "axios";
 
 const DetailProduct = () => {
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    getCourses();
+  }, []);
+
+  const getCourses = async () => {
+    const response = await axios.get("http://api.sukmax.my.id/course");
+    setCourses(response.data);
+  };
   return (
     <section className="section mt-5">
       <div class="container">
